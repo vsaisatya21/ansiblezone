@@ -1,0 +1,7 @@
+---
+# vars file for default
+pack_name: apache2
+pack_packages: 
+  - php 
+  - php-mysql
+into_html_url: https://raw.githubusercontent.com/asquarezone/AnsibleZone/master/ClassRoomExamples/July2018/basics/info.php

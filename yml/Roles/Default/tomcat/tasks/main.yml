@@ -1,0 +1,11 @@
+---
+# tasks file for default
+- name: "update apt repo"
+  apt:
+    update_cache: yes
+- name: install tomcat
+  apt:
+    name: "{{ package }}"
+    state: "{{ st_to_be_set }}"
+  notify:
+  - restart tomcat
