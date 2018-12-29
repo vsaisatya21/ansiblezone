@@ -1,0 +1,16 @@
+sudo apt-get update
+sudo apt-get install default-jdk
+sudo nano /etc/default/tomcat7
+JAVA_OPTS="-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -Xmx512m -XX:MaxPermSize=256m -XX:+UseConcMarkSweepGC"
+sudo service tomcat7 restart
+sudo apt-get install tomcat7-docs tomcat7-admin tomcat7-examples
+sudo nano /etc/tomcat7/tomcat-users.xml
+
+<tomcat-users>
+    <user username="admin" password="password" roles="manager-gui,admin-gui"/>
+</tomcat-users>
+
+
+<javaapp.war>
+  copy to /var/lib/tomcat7/webapps/
+ 

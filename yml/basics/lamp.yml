@@ -8,7 +8,7 @@
       update_cache: yes
       state: present
     notify:
-    - restart apache 
+    - restart apache
     when: ansible_os_family == "Debian"
   - name: install httpd
     yum:
@@ -16,32 +16,39 @@
       state: present
     notify:
     - restart httpd
-    when: ansible_os_family == "RedHat"  
+    when: ansible_os_family == "RedHat"
   - name: Install php packages
     apt:
       name: "{{ item }}"
       state: present
     with_items:
-      - php 
+      - php
       - libapache2-mod-php
       - php-mcrypt
       - php-mysql
     notify:
-    - restart apache 
+    - restart apache
     when: ansible_os_family == "Debian"
   - name: Install php for redhat
     yum:
       name: "{{ item }}"
       state: present
     with_items:
-      - php 
+      - php
       - php-mysql
     notify:
-    - restart httpd     
-    when: ansible_os_family == "RedHat"  
+    - restart httpd
+    when: ansible_os_family == "RedHat"
+  - name: download web page
+    get_url:
+      url: https://raw.githubusercontent.com/asquarezone/AnsibleZone/master/ClassRoomExamples/July2018/basics/info.php
+      dest: /var/www/html/info.php
+    notify:
+    - restart apache 
+    - restart httpd
   handlers:
   - name: restart apache
-    service: 
+    service:
       name: apache2
       enabled: yes
       state: restarted
@@ -51,8 +58,7 @@
       name: httpd
       enabled: yes
       state: restarted
-    when: ansible_os_family == "RedHat"  
+    when: ansible_os_family == "RedHat"
 
-  
 
-    
+
