@@ -1,0 +1,5 @@
+---
+- hosts: ecomm
+  become: yes
+  roles:
+  - postgres

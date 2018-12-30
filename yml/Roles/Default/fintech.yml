@@ -1,0 +1,6 @@
+---
+- hosts: all
+  become: yes
+  reole:
+  - tomcat
+  - geerlinguy.mysql

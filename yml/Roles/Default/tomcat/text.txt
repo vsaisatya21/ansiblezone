@@ -1,0 +1,11 @@
+## playbook
+## betterlamp.yml
+hosts
+  groupcars
+    Redhat.yml
+    ubuntu.yml
+  host_vars
+    localhost.yml   ansible_user= sailakshman
+
+
+ ### 1.ansible-playbook -i hosts betterlamp.yml --extravars -k
