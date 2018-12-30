@@ -1,0 +1,5 @@
+
+Java-Opts =    xmx={{ perm_size }} {{ min_size }}
+
+
+ansible-playbook -e "perm_size=1024 min_size=512" tomcat.yml
