@@ -29,6 +29,11 @@ handler:
   service: 
     name: tomcat7
     state: restarted  
+-----------------------------------------------------
 
+
+1. Deploy Game-of-Life to tomcat8 on ubuntu machines
+2. Environments: JDK 8 & Tomcat 8
+3. Copy game-of-life.war inti webapps
 
 
