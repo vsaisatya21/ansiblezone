@@ -1,0 +1,20 @@
+1.sudo apt-get install nodejs
+2.sudo apt-get install build-essential
+
+ create hello.js
+
+#!/usr/bin/env nodejs
+var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(8080, 'localhost');
+console.log('Server running at http://localhost:8080/');
+
+node hello.js
+
+1.search for role for node install
+   test it
+2. use template/copy to some destination
+
+
